@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#8BC34A</color>
+
+    <!-- Gray Theme color -->
+    <color name="colorPrimary_Gray">#9E9E9E</color>
+    <color name="colorPrimaryDark_Gray">#616161</color>
+    <color name="colorAccent_Gray">#00BCD4</color>
+
+    <!-- Lime Theme color -->
+    <color name="colorPrimaryLime">#CDDC39</color>
+    <color name="colorPrimaryDarkLime">#AFB42B</color>
+    <color name="colorAccentLime">#FFC107</color>
+</resources>

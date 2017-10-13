@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Grayt" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_Gray</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_Gray</item>
+        <item name="colorAccent">@color/colorAccent_Gray</item>
+    </style>
+
+    <style name="AppTheme.Lime" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryLime</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkLime</item>
+        <item name="colorAccent">@color/colorAccentLime</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- Text styles -->
+    <style name="Text" parent="TextAppearance.AppCompat"></style>
+    <style name="Text.Caption" parent="TextAppearance.AppCompat.Caption"></style>
+    <style name="Text.Small" parent="TextAppearance.AppCompat.Small"></style>
+    <style name="Text.Body1" parent="TextAppearance.AppCompat.Body1"></style>
+    <style name="Text.Body2" parent="TextAppearance.AppCompat.Body2"></style>
+    <style name="Text.Medium" parent="TextAppearance.AppCompat.Medium"></style>
+    <style name="Text.Large" parent="TextAppearance.AppCompat.Large"></style>
+    <style name="Text.Headline" parent="TextAppearance.AppCompat.Headline"></style>
+    <style name="Text.Title" parent="TextAppearance.AppCompat.Title"></style>
+    <style name="Text.Display1" parent="TextAppearance.AppCompat.Display1"></style>
+    <style name="Text.Subhead" parent="TextAppearance.AppCompat.Subhead"></style>
+    <style name="Text.Button" parent="TextAppearance.AppCompat.Button"></style>
+
+    <!-- Button Styles-->
+    <style name="Buton" parent="Widget.AppCompat.Button"></style>
+    <style name="Buton.Small" parent="Widget.AppCompat.Button.Small"></style>
+    <style name="Buton.Colored" parent="Widget.AppCompat.Button.Colored"></style>
+    <style name="Buton.Borderless" parent="Widget.AppCompat.Button.Borderless"></style>
+    <style name="Buton.Borderless.Colored" parent="Widget.AppCompat.Button.Borderless.Colored"></style>
+
+</resources>
