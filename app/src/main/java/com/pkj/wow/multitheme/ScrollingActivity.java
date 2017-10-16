@@ -10,13 +10,18 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ScrollingActivity extends AppCompatActivity {
+import com.pkj.wow.multitheme.view.FabProgressLayout;
+
+public class ScrollingActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static final int THEME_BLUE = 0;
     public static final int THEME_GRAY = 1;
     public static final int THEME_LIME = 2;
     public static boolean mIsNightMode = false;
     public static int mTheme = THEME_BLUE;
+
+    private FabProgressLayout mFabProgressLayout;
+    private FabProgressLayout mFabSecProgressLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +58,15 @@ public class ScrollingActivity extends AppCompatActivity {
                 recreate();
             }
         });
+
+        mFabProgressLayout = (FabProgressLayout) findViewById(R.id.fab_progress);
+        mFabProgressLayout.setOnClickListener(this);
+//        mFabSecProgressLayout = (FabProgressLayout) findViewById(R.id.fab_progress_secondary);
+//        mFabSecProgressLayout.setOnClickListener(this);
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -94,6 +107,30 @@ public class ScrollingActivity extends AppCompatActivity {
 
                 break;
             default:
+                break;
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.fab_progress :
+                mFabProgressLayout.startProgress();
+                mFabProgressLayout.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mFabProgressLayout.stopProgress();
+                    }
+                },5000);
+                break;
+            case R.id.fab_progress_secondary :
+                mFabSecProgressLayout.startProgress();
+                mFabSecProgressLayout.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mFabSecProgressLayout.stopProgress();
+                    }
+                },5000);
                 break;
         }
     }

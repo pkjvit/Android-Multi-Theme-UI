@@ -4,4 +4,5 @@
     <dimen name="text_margin">16dp</dimen>
 
     <dimen name="size_32dp">32dp</dimen>
+    <dimen name="progress_bar_size">0dp</dimen>
 </resources>

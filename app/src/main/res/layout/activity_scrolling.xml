@@ -42,6 +42,7 @@
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@drawable/ic_brightness_4_black_24dp" />
+        app:srcCompat="@drawable/ic_brightness_4_black_24dp"
+        android:tint="?android:attr/colorBackground"/>
 
 </android.support.design.widget.CoordinatorLayout>

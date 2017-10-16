@@ -29,17 +29,33 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"></RelativeLayout>
-    
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_refresh"
+
+    <com.pkj.wow.multitheme.view.FabProgressLayout
+        android:id="@+id/fab_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/cardview"
-        app:fabSize="mini"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@drawable/ic_refresh_black_24dp"
-        />
+        android:elevation="6dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/ic_refresh_black_24dp"
+            app:backgroundTint="?android:attr/colorBackground"
+            android:tint="?android:attr/colorAccent"
+            />
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            />
+    </com.pkj.wow.multitheme.view.FabProgressLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>
