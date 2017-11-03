@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Blue Theme color -->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#8BC34A</color>
@@ -13,4 +14,7 @@
     <color name="colorPrimaryLime">#CDDC39</color>
     <color name="colorPrimaryDarkLime">#AFB42B</color>
     <color name="colorAccentLime">#FFC107</color>
+
+    <color name="themeDeselected">#d69b9b9b</color>
+    <color name="themeSelected">#e300aaff</color>
 </resources>

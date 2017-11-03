@@ -10,25 +10,32 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
        >
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/card_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="4dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:paddingBottom="32dp">
+            android:paddingBottom="32dp"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/small_text" />
+                android:text="@string/title_text"
+                style="@style/Text.Subhead"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/small_text"
+                 />
     
-        </RelativeLayout>
+        </LinearLayout>
     
     </android.support.v7.widget.CardView>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"></RelativeLayout>
+        android:layout_height="220dp"></RelativeLayout>
 
 
 
@@ -39,21 +46,24 @@
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/cardview"
         app:layout_anchorGravity="bottom|end"
-        android:elevation="6dp">
+        android:elevation="4dp">
 
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fabSize="mini"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/ic_refresh_black_24dp"
             app:backgroundTint="?android:attr/colorBackground"
             android:tint="?android:attr/colorAccent"
+            android:elevation="2dp"
             />
         <ProgressBar
             style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_56dp"
+            android:layout_height="@dimen/size_56dp"
             android:visibility="invisible"
+            android:layout_gravity="center"
             />
     </com.pkj.wow.multitheme.view.FabProgressLayout>
 

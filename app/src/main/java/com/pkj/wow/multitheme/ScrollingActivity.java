@@ -10,40 +10,35 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.pkj.wow.multitheme.model.Theme;
 import com.pkj.wow.multitheme.view.FabProgressLayout;
+import com.pkj.wow.multitheme.view.ThemeView;
 
-public class ScrollingActivity extends AppCompatActivity implements View.OnClickListener{
-
-    public static final int THEME_BLUE = 0;
-    public static final int THEME_GRAY = 1;
-    public static final int THEME_LIME = 2;
-    public static boolean mIsNightMode = false;
-    public static int mTheme = THEME_BLUE;
+public class ScrollingActivity extends BaseActivity implements View.OnClickListener{
 
     private FabProgressLayout mFabProgressLayout;
-    private FabProgressLayout mFabSecProgressLayout;
+    private ThemeView mThemeBlue;
+    private ThemeView mThemeGray;
+    private ThemeView mThemeLime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        switch (mTheme){
-            case THEME_BLUE :
-                setTheme(R.style.AppTheme_NoActionBar);
-                break;
-            case THEME_GRAY :
-                setTheme(R.style.AppTheme_Grayt);
-                break;
-            case THEME_LIME :
-                setTheme(R.style.AppTheme_Lime);
-                break;
-            default:
-                break;
-        }
+
         setContentView(R.layout.activity_scrolling);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        mThemeBlue = findViewById(R.id.theme_view_blue);
+        mThemeBlue.setThemeColor(new Theme(R.color.colorPrimary, R.color.colorPrimaryDark, R.color.colorAccent));
+        mThemeGray = findViewById(R.id.theme_view_gray);
+        mThemeGray.setThemeColor(new Theme(R.color.colorPrimary_Gray, R.color.colorPrimaryDark_Gray, R.color.colorAccent_Gray));
+        mThemeLime = findViewById(R.id.theme_view_lime);
+        mThemeLime.setThemeColor(new Theme(R.color.colorPrimaryLime, R.color.colorPrimaryDarkLime, R.color.colorAccentLime));
+
+        updateTheme();
+
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,8 +56,6 @@ public class ScrollingActivity extends AppCompatActivity implements View.OnClick
 
         mFabProgressLayout = (FabProgressLayout) findViewById(R.id.fab_progress);
         mFabProgressLayout.setOnClickListener(this);
-//        mFabSecProgressLayout = (FabProgressLayout) findViewById(R.id.fab_progress_secondary);
-//        mFabSecProgressLayout.setOnClickListener(this);
 
     }
 
@@ -92,19 +85,44 @@ public class ScrollingActivity extends AppCompatActivity implements View.OnClick
     public void onClickTheme(View view){
         switch (view.getId()){
             case R.id.theme_blue :
+            case R.id.theme_view_blue :
                 mTheme = THEME_BLUE;
                 recreate();
-
                 break;
+
             case R.id.theme_gray :
+            case R.id.theme_view_gray :
                 mTheme = THEME_GRAY;
                 recreate();
-
                 break;
+
             case R.id.theme_lime :
+            case R.id.theme_view_lime :
                 mTheme = THEME_LIME;
                 recreate();
+                break;
 
+            default:
+                break;
+        }
+    }
+
+    private void updateTheme(){
+        switch (mTheme){
+            case THEME_BLUE :
+                mThemeBlue.setActivated(true);
+                mThemeGray.setActivated(false);
+                mThemeLime.setActivated(false);
+                break;
+            case THEME_GRAY :
+                mThemeBlue.setActivated(false);
+                mThemeGray.setActivated(true);
+                mThemeLime.setActivated(false);
+                break;
+            case THEME_LIME :
+                mThemeBlue.setActivated(false);
+                mThemeGray.setActivated(false);
+                mThemeLime.setActivated(true);
                 break;
             default:
                 break;
@@ -120,15 +138,6 @@ public class ScrollingActivity extends AppCompatActivity implements View.OnClick
                     @Override
                     public void run() {
                         mFabProgressLayout.stopProgress();
-                    }
-                },5000);
-                break;
-            case R.id.fab_progress_secondary :
-                mFabSecProgressLayout.startProgress();
-                mFabSecProgressLayout.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mFabSecProgressLayout.stopProgress();
                     }
                 },5000);
                 break;
