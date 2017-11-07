@@ -3,56 +3,57 @@
 
     <color name="themeDeselected">#d69b9b9b</color>
     <color name="themeSelected">#e300aaff</color>
+    <color name="seperator">#7ca6a6a6</color>
 
 
     <!-- RED Theme -->
     <color name="primaryColorRed">#d32f2f</color>
-    <color name="primaryLightColorRed">#ff6659</color>
-    <color name="primaryDarkColorRed">#9a0007</color>
-    <color name="secondaryColorRed">#ffeb3b</color>
-    <color name="secondaryLightColorRed">#ffff72</color>
-    <color name="secondaryDarkColorRed">#c8b900</color>
+    <color name="F44336">#ff6659</color>
+    <color name="primaryDarkColorRed">#D32F2F</color>
+    <color name="secondaryColorRed">#FFC107</color>
+    <color name="secondaryLightColorRed">#fccf4a</color>
+    <color name="secondaryDarkColorRed">#e1a902</color>
     <color name="primaryTextColorRed">#ffffff</color>
     <color name="secondaryTextColorRed">#000000</color>
 
     <!-- PINK Theme -->
-    <color name="primaryColorPink">#e91e63</color>
-    <color name="primaryLightColorPink">#ff6090</color>
-    <color name="primaryDarkColorPink">#b0003a</color>
-    <color name="secondaryColorPink">#64b5f6</color>
-    <color name="secondaryLightColorPink">#9be7ff</color>
-    <color name="secondaryDarkColorPink">#2286c3</color>
+    <color name="primaryColorPink">#E91E63</color>
+    <color name="primaryLightColorPink">#F8BBD0</color>
+    <color name="primaryDarkColorPink">#C2185B</color>
+    <color name="secondaryColorPink">#448AFF</color>
+    <color name="secondaryLightColorPink">#89b3f8</color>
+    <color name="secondaryDarkColorPink">#1a62da</color>
     <color name="primaryTextColorPink">#000000</color>
     <color name="secondaryTextColorPink">#000000</color>
 
     <!-- PURPLE Theme -->
-    <color name="primaryColorPurple">#8e24aa</color>
-    <color name="primaryLightColorPurple">#c158dc</color>
-    <color name="primaryDarkColorPurple">#5c007a</color>
-    <color name="secondaryColorPurple">#eeff41</color>
-    <color name="secondaryLightColorPurple">#ffff78</color>
-    <color name="secondaryDarkColorPurple">#b8cc00</color>
+    <color name="primaryColorPurple">#9C27B0</color>
+    <color name="primaryLightColorPurple">#E1BEE7</color>
+    <color name="primaryDarkColorPurple">#7B1FA2</color>
+    <color name="secondaryColorPurple">#CDDC39</color>
+    <color name="secondaryLightColorPurple">#e1ea86</color>
+    <color name="secondaryDarkColorPurple">#b4c320</color>
     <color name="primaryTextColorPurple">#ffffff</color>
     <color name="secondaryTextColorPurple">#000000</color>
 
 
     <!-- DEEPPURPLE Theme -->
-    <color name="primaryColorDeepPurple">#5e35b1</color>
-    <color name="primaryLightColorDeepPurple">#9162e4</color>
-    <color name="primaryDarkColorDeepPurple">#280680</color>
-    <color name="secondaryColorDeepPurple">#ffea00</color>
-    <color name="secondaryLightColorDeepPurple">#ffff56</color>
-    <color name="secondaryDarkColorDeepPurple">#c7b800</color>
+    <color name="primaryColorDeepPurple">#673AB7</color>
+    <color name="primaryLightColorDeepPurple">#D1C4E9</color>
+    <color name="primaryDarkColorDeepPurple">#512DA8</color>
+    <color name="secondaryColorDeepPurple">#FFEB3B</color>
+    <color name="secondaryLightColorDeepPurple">#fff599</color>
+    <color name="secondaryDarkColorDeepPurple">#e0cd24</color>
     <color name="primaryTextColorDeepPurple">#ffffff</color>
     <color name="secondaryTextColorDeepPurple">#000000</color>
 
     <!-- INDIGO Theme -->
-    <color name="primaryColorIndigo">#3f51b5</color>
-    <color name="primaryLightColorIndigo">#757de8</color>
-    <color name="primaryDarkColorIndigo">#002984</color>
-    <color name="secondaryColorIndigo">#ffab00</color>
-    <color name="secondaryLightColorIndigo">#ffdd4b</color>
-    <color name="secondaryDarkColorIndigo">#c67c00</color>
+    <color name="primaryColorIndigo">#3F51B5</color>
+    <color name="primaryLightColorIndigo">#C5CAE9</color>
+    <color name="primaryDarkColorIndigo">#303F9F</color>
+    <color name="secondaryColorIndigo">#FF9800</color>
+    <color name="secondaryLightColorIndigo">#feba56</color>
+    <color name="secondaryDarkColorIndigo">#cf7b00</color>
     <color name="primaryTextColorIndigo">#ffffff</color>
     <color name="secondaryTextColorIndigo">#000000</color>
 
@@ -132,9 +133,9 @@
     <color name="primaryColorYellow">#FFEB3B</color>
     <color name="primaryLightColorYellow">#FFF9C4</color>
     <color name="primaryDarkColorYellow">#FBC02D</color>
-    <color name="secondaryColorYellow">#E040FB</color>
-    <color name="secondaryLightColorYellow">#e68bf5</color>
-    <color name="secondaryDarkColorYellow">#b21fcb</color>
+    <color name="secondaryColorYellow">#536DFE</color>
+    <color name="secondaryLightColorYellow">#8799fd</color>
+    <color name="secondaryDarkColorYellow">#3751e1</color>
     <color name="primaryTextColorYellow">#ffffff</color>
     <color name="secondaryTextColorYellow">#000000</color>
 
