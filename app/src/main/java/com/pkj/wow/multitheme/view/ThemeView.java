@@ -18,7 +18,7 @@ import com.pkj.wow.multitheme.model.Theme;
  */
 
 public class ThemeView extends View {
-    private Theme mTheme;
+    private Theme mTheme = new Theme(R.color.primaryColorAmber ,R.color.primaryDarkColorAmber, R.color.secondaryColorAmber);
 
     private Paint mBoarderPaint;
     private Paint mPrimaryPaint;
@@ -48,7 +48,7 @@ public class ThemeView extends View {
         init();
     }
 
-    public void setThemeColor(Theme theme){
+    public void setTheme(Theme theme){
         this.mTheme = theme;
         init();
         invalidate();
@@ -56,8 +56,6 @@ public class ThemeView extends View {
 
     private void init(){
         try {
-
-
             mBoarderPaint = new Paint();
             mBoarderPaint.setStyle(Paint.Style.STROKE);
             if (this.isSelected()) {

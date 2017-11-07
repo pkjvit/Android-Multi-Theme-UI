@@ -5,6 +5,7 @@ package com.pkj.wow.multitheme.model;
  */
 
 public class Theme {
+    private int id;
     private int primaryColor;
     private int primaryDarkColor;
     private int accentColor;
@@ -13,6 +14,21 @@ public class Theme {
         this.primaryColor = primaryColor;
         this.primaryDarkColor = primaryDarkColor;
         this.accentColor = accentColor;
+    }
+
+    public Theme(int id ,int primaryColor, int primaryDarkColor, int accentColor) {
+        this.id = id;
+        this.primaryColor = primaryColor;
+        this.primaryDarkColor = primaryDarkColor;
+        this.accentColor = accentColor;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getPrimaryColor() {

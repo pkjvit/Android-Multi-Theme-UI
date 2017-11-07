@@ -15,68 +15,6 @@
         android:padding="16dp">
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/size_32dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
-            <TextView
-                style="@style/Text.Small"
-                android:text="Theme : "
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginRight="8dp"
-                android:onClick="onClickTheme"/>
-
-            <ImageButton
-                android:id="@+id/theme_blue"
-                android:layout_marginRight="8dp"
-                android:layout_width="@dimen/size_32dp"
-                android:layout_height="@dimen/size_32dp"
-                android:background="@color/colorPrimary"
-                android:onClick="onClickTheme"
-                android:visibility="gone"/>
-
-            <ImageButton
-                android:id="@+id/theme_gray"
-                android:layout_marginRight="8dp"
-                android:layout_width="@dimen/size_32dp"
-                android:layout_height="@dimen/size_32dp"
-                android:background="@color/colorPrimary_Gray"
-                android:onClick="onClickTheme"
-                android:visibility="gone"/>
-
-            <ImageButton
-                android:id="@+id/theme_lime"
-                android:layout_marginRight="8dp"
-                android:layout_width="@dimen/size_32dp"
-                android:layout_height="@dimen/size_32dp"
-                android:background="@color/colorPrimaryLime"
-                android:onClick="onClickTheme"
-                android:visibility="gone"/>
-
-            <com.pkj.wow.multitheme.view.ThemeView
-                android:id="@+id/theme_view_blue"
-                android:layout_marginRight="8dp"
-                android:layout_width="@dimen/size_32dp"
-                android:layout_height="@dimen/size_32dp"
-                android:onClick="onClickTheme"/>
-            <com.pkj.wow.multitheme.view.ThemeView
-                android:id="@+id/theme_view_gray"
-                android:layout_marginRight="8dp"
-                android:layout_width="@dimen/size_32dp"
-                android:layout_height="@dimen/size_32dp"
-                android:onClick="onClickTheme"/>
-            <com.pkj.wow.multitheme.view.ThemeView
-                android:id="@+id/theme_view_lime"
-                android:layout_width="@dimen/size_32dp"
-                android:layout_height="@dimen/size_32dp"
-                android:onClick="onClickTheme"/>
-
-        </LinearLayout>
-
         <include layout="@layout/layout_login"/>
 
         <include layout="@layout/layout_refresh_list"/>
