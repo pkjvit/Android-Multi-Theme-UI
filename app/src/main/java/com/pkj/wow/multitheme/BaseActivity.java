@@ -23,4 +23,6 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(ThemeUtil.getThemeId(mTheme));
     }
+
+
 }
