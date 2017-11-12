@@ -47,12 +47,13 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginRight="4dp"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:onClick="onClick"/>
 
     </LinearLayout></android.support.v7.widget.CardView>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView1"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

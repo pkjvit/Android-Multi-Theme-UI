@@ -159,6 +159,10 @@ public class ScrollingActivity extends BaseActivity implements View.OnClickListe
                     }
                 },5000);
                 break;
+            case R.id.theme_selected :
+                if(mBottomSheetBehavior.getState()!=BottomSheetBehavior.STATE_EXPANDED)
+                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
         }
     }
 }
