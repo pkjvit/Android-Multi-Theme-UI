@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 
 import com.pkj.wow.multitheme.adapter.ThemeAdapter;
 import com.pkj.wow.multitheme.model.Theme;
+import com.pkj.wow.multitheme.util.ThemeUtil;
 import com.pkj.wow.multitheme.view.FabProgressLayout;
 import com.pkj.wow.multitheme.view.ThemeView;
 
@@ -103,25 +104,7 @@ public class ScrollingActivity extends BaseActivity implements View.OnClickListe
 
     private void prepareThemeData() {
         mThemeList.clear();
-        mThemeList.add(new Theme(0,R.color.primaryColorRed, R.color.primaryDarkColorRed, R.color.secondaryColorRed));
-        mThemeList.add(new Theme(1,R.color.primaryColorPink, R.color.primaryDarkColorPink, R.color.secondaryColorPink));
-        mThemeList.add(new Theme(2,R.color.primaryColorPurple, R.color.primaryDarkColorPurple, R.color.secondaryColorPurple));
-        mThemeList.add(new Theme(3,R.color.primaryColorDeepPurple, R.color.primaryDarkColorDeepPurple, R.color.secondaryColorDeepPurple));
-        mThemeList.add(new Theme(4,R.color.primaryColorIndigo, R.color.primaryDarkColorIndigo, R.color.secondaryColorIndigo));
-        mThemeList.add(new Theme(5,R.color.primaryColorBlue, R.color.primaryDarkColorBlue, R.color.secondaryColorBlue));
-        mThemeList.add(new Theme(6,R.color.primaryColorLightBlue, R.color.primaryDarkColorLightBlue, R.color.secondaryColorLightBlue));
-        mThemeList.add(new Theme(7,R.color.primaryColorCyan, R.color.primaryDarkColorCyan, R.color.secondaryColorCyan));
-        mThemeList.add(new Theme(8,R.color.primaryColorTeal, R.color.primaryDarkColorTeal, R.color.secondaryColorTeal));
-        mThemeList.add(new Theme(9,R.color.primaryColorGreen, R.color.primaryDarkColorGreen, R.color.secondaryColorGreen));
-        mThemeList.add(new Theme(10,R.color.primaryColorLightGreen, R.color.primaryDarkColorLightGreen, R.color.secondaryColorLightGreen));
-        mThemeList.add(new Theme(11,R.color.primaryColorLime, R.color.primaryDarkColorLime, R.color.secondaryColorLime));
-        mThemeList.add(new Theme(12,R.color.primaryColorYellow, R.color.primaryDarkColorYellow, R.color.secondaryColorYellow));
-        mThemeList.add(new Theme(13,R.color.primaryColorAmber, R.color.primaryDarkColorAmber, R.color.secondaryColorAmber));
-        mThemeList.add(new Theme(14,R.color.primaryColorOrange, R.color.primaryDarkColorOrange, R.color.secondaryColorOrange));
-        mThemeList.add(new Theme(15,R.color.primaryColorDeepOrange, R.color.primaryDarkColorDeepOrange, R.color.secondaryColorDeepOrange));
-        mThemeList.add(new Theme(16,R.color.primaryColorBrown, R.color.primaryDarkColorBrown, R.color.secondaryColorBrown));
-        mThemeList.add(new Theme(17,R.color.primaryColorGray, R.color.primaryDarkColorGray, R.color.secondaryColorGray));
-        mThemeList.add(new Theme(18,R.color.primaryColorBlueGray, R.color.primaryDarkColorBlueGray, R.color.secondaryColorBlueGray));
+        mThemeList.addAll(ThemeUtil.getThemeList());
         mAdapter.notifyDataSetChanged();
     }
 
