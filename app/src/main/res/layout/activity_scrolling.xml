@@ -30,7 +30,7 @@
                 android:src="@drawable/bg1"
                 android:tint="?android:attr/colorPrimary"
                 android:tintMode="multiply"
-                android:alpha="0.3"
+                android:alpha="0.2"
                 app:layout_collapseMode="parallax" />
 
             <ImageView
@@ -65,6 +65,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="58dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <android.support.design.widget.FloatingActionButton
@@ -77,7 +78,8 @@
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@drawable/ic_brightness_4_black_24dp"
-        android:tint="?android:attr/colorBackground">
+        android:tint="?android:attr/colorBackground"
+        android:onClick="onClick">
         <requestFocus/>
     </android.support.design.widget.FloatingActionButton>
 

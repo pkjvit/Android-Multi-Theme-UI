@@ -15,19 +15,33 @@ import java.util.List;
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.MyViewHolder> {
  
     private List<Theme> themeList;
+    private RecyclerViewClickListener mRecyclerViewClickListener;
  
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ThemeView themeView;
+        private RecyclerViewClickListener mListener;
  
-        public MyViewHolder(View view) {
+        public MyViewHolder(View view, RecyclerViewClickListener listener) {
             super(view);
+            mListener = listener;
             themeView = (ThemeView) view.findViewById(R.id.themeView);
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            mListener.onClick(view, getAdapterPosition());
+            ScrollingActivity.selectedTheme = getAdapterPosition();
+            ScrollingActivity.mTheme = ScrollingActivity.mThemeList.get(getAdapterPosition()).getId();
+            themeView.setActivated(true);
+            ThemeAdapter.this.notifyDataSetChanged();
         }
     }
  
  
-    public ThemeAdapter(List<Theme> themeList) {
+    public ThemeAdapter(List<Theme> themeList, RecyclerViewClickListener recyclerViewClickListener) {
         this.themeList = themeList;
+        mRecyclerViewClickListener = recyclerViewClickListener;
     }
  
     @Override
@@ -35,24 +49,13 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.MyViewHolder
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_row_theme, parent, false);
  
-        return new MyViewHolder(itemView);
+        return new MyViewHolder(itemView, mRecyclerViewClickListener);
     }
  
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         Theme theme = themeList.get(position);
         holder.themeView.setTheme(theme);
-
-        holder.themeView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ScrollingActivity.selectedTheme = position;
-                ScrollingActivity.mTheme = ScrollingActivity.mThemeList.get(position).getId();
-                holder.themeView.setActivated(true);
-                ThemeAdapter.this.notifyDataSetChanged();
-                ((ScrollingActivity)holder.themeView.getContext()).recreate();
-            }
-        });
 
         if(ScrollingActivity.selectedTheme == position){
             holder.themeView.setActivated(true);

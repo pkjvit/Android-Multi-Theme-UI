@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 
+import com.pkj.wow.multitheme.adapter.RecyclerViewClickListener;
 import com.pkj.wow.multitheme.adapter.SectionsPagerAdapter;
 import com.pkj.wow.multitheme.adapter.ThemeAdapter;
 import com.pkj.wow.multitheme.model.Theme;
@@ -48,9 +49,6 @@ public class ScrollingActivity extends BaseActivity implements View.OnClickListe
 
         initBottomSheet();
 
-//        mFabProgressLayout = findViewById(R.id.fab_progress);
-//        mFabProgressLayout.setOnClickListener(this);
-
         prepareThemeData();
 
         ThemeView themeView = findViewById(R.id.theme_selected);
@@ -77,43 +75,45 @@ public class ScrollingActivity extends BaseActivity implements View.OnClickListe
         // init the bottom sheet behavior
         mBottomSheetBehavior = BottomSheetBehavior.from(llBottomSheet);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // change the state of the bottom sheet
-                switch (mBottomSheetBehavior.getState()){
-                    case BottomSheetBehavior.STATE_HIDDEN :
-                        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                        break;
-
-                    case BottomSheetBehavior.STATE_COLLAPSED :
-                        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-                        break;
-
-                    case BottomSheetBehavior.STATE_EXPANDED :
-                        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-                        break;
-                }
-            }
-        });
-
         SwitchCompat switchCompat = findViewById(R.id.switch_dark_mode);
         switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 mIsNightMode = b;
-                if(mIsNightMode){
-                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                }else{
-                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                int delayTime = 200;
+                if(mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED){
+                    delayTime = 400;
+                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+                compoundButton.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(mIsNightMode){
+                            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        }else{
+                            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        }
+                    }
+                },delayTime);
+
             }
         });
 
         mRecyclerView = findViewById(R.id.recyclerView);
 
-        mAdapter = new ThemeAdapter(mThemeList);
+        mAdapter = new ThemeAdapter(mThemeList, new RecyclerViewClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ScrollingActivity.this.recreate();
+                    }
+                },400);
+            }
+        });
+
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(),4);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -152,8 +152,21 @@ public class ScrollingActivity extends BaseActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.theme_selected :
-                if(mBottomSheetBehavior.getState()!=BottomSheetBehavior.STATE_EXPANDED)
-                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            case R.id.fab:
+                // change the state of the bottom sheet
+                switch (mBottomSheetBehavior.getState()){
+                    case BottomSheetBehavior.STATE_HIDDEN :
+                        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                        break;
+
+                    case BottomSheetBehavior.STATE_COLLAPSED :
+                        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                        break;
+
+                    case BottomSheetBehavior.STATE_EXPANDED :
+                        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                        break;
+                }
                 break;
         }
     }
