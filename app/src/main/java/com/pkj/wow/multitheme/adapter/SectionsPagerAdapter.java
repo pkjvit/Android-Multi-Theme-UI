@@ -4,7 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.pkj.wow.multitheme.ui.fragment.CardFragment;
+import com.pkj.wow.multitheme.ui.fragment.ChatFragment;
 import com.pkj.wow.multitheme.ui.fragment.TextFragment;
+import com.pkj.wow.multitheme.ui.fragment.UIFragment;
 
 public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
     private String mWordUpdated;
@@ -33,11 +36,11 @@ public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
         switch (position){
             case 0 : fragment = TextFragment.newInstance("","");
                 break;
-            case 1 : fragment = TextFragment.newInstance("","");
+            case 1 : fragment = CardFragment.newInstance("","");
                 break;
-            case 2 : fragment = TextFragment.newInstance("","");
+            case 2 : fragment = UIFragment.newInstance("","");
                 break;
-            case 3 : fragment = TextFragment.newInstance("","");
+            case 3 : fragment = ChatFragment.newInstance("","");
                 break;
             default:
                 break;
@@ -57,11 +60,11 @@ public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return "Text";
             case 1:
-                return "Auth";
+                return "Card";
             case 2:
                 return "UI";
             case 3:
-                return "List";
+                return "Chat";
         }
         return null;
     }

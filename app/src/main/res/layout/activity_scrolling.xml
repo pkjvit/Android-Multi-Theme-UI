@@ -33,6 +33,12 @@
                 android:alpha="0.3"
                 app:layout_collapseMode="parallax" />
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#8f8e8e"
+                android:alpha="0.3"/>
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"

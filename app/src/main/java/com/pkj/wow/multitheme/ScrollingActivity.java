@@ -31,7 +31,6 @@ import java.util.List;
 public class ScrollingActivity extends BaseActivity implements View.OnClickListener{
     private SectionsPagerAdapter    mSectionsPagerAdapter;
     private ViewPager               mViewPager;
-    private FabProgressLayout       mFabProgressLayout;
 
     public static List<Theme> mThemeList = new ArrayList<>();
     public static int selectedTheme = 0;
@@ -152,15 +151,6 @@ public class ScrollingActivity extends BaseActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.fab_progress :
-                mFabProgressLayout.startProgress();
-                mFabProgressLayout.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mFabProgressLayout.stopProgress();
-                    }
-                },5000);
-                break;
             case R.id.theme_selected :
                 if(mBottomSheetBehavior.getState()!=BottomSheetBehavior.STATE_EXPANDED)
                     mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);

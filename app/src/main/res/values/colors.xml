@@ -7,8 +7,8 @@
 
 
     <!-- RED Theme -->
-    <color name="primaryColorRed">#d32f2f</color>
-    <color name="F44336">#ff6659</color>
+    <color name="primaryColorRed">#F44336</color>
+    <color name="primaryLightColorRed">#FFCDD2</color>
     <color name="primaryDarkColorRed">#D32F2F</color>
     <color name="secondaryColorRed">#FFC107</color>
     <color name="secondaryLightColorRed">#fccf4a</color>

@@ -35,7 +35,7 @@
     </android.support.v7.widget.CardView>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="220dp"></RelativeLayout>
+        android:layout_height="280dp"></RelativeLayout>
 
 
 
