@@ -27,7 +27,7 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bg"
+                android:src="@drawable/bg1"
                 android:tint="?android:attr/colorPrimary"
                 android:tintMode="multiply"
                 android:alpha="0.3"

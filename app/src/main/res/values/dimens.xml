@@ -1,5 +1,6 @@
 <resources>
     <dimen name="app_bar_height">240dp</dimen>
+    <dimen name="bottom_sheet_height">280dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 
