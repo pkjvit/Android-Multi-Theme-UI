@@ -17,7 +17,6 @@
             android:paddingTop="4dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:paddingBottom="32dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
@@ -28,7 +27,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/small_text"
+                style="@style/Text.Body1"
                  />
+            <TextView
+                android:id="@+id/tv_placeholder"
+                style="@style/Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:gravity="center"
+                android:visibility="invisible"
+                android:layout_gravity="center"/>
     
         </LinearLayout>
     

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.pkj.wow.multitheme.R;
 import com.pkj.wow.multitheme.view.FabProgressLayout;
@@ -27,6 +28,7 @@ public class CardFragment extends Fragment {
     private String mParam2;
 
     private FabProgressLayout mFabProgressLayout;
+    private TextView mPlaceholderTV;
 
     public CardFragment() {
         // Required empty public constructor
@@ -71,14 +73,19 @@ public class CardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mFabProgressLayout  = view.findViewById(R.id.fab_progress);
+        mPlaceholderTV  = view.findViewById(R.id.tv_placeholder);
+        mPlaceholderTV.setVisibility(View.INVISIBLE);
+
         mFabProgressLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mPlaceholderTV.setVisibility(View.VISIBLE);
                 mFabProgressLayout.startProgress();
                 mFabProgressLayout.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         mFabProgressLayout.stopProgress();
+                        mPlaceholderTV.setVisibility(View.INVISIBLE);
                     }
                 },5000);
             }
