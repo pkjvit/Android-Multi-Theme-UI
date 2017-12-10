@@ -1,4 +1,4 @@
-# UI-MultiTheme
+# Android-MultiTheme
 Android multiple theme implementation with day night mode.
 
 ![Custom Date Picker](https://github.com/pkjvit/UI-MultiTheme/blob/master/gif_multi_theme_240x480.gif)
@@ -26,4 +26,53 @@ It has four modes :
 2. Your activity must extends **AppCompatActivity** to change day/night mode at runtime.
 ```
 getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+```
+
+## Multi Theme
+It's very easy to change theme at runtime in android.
+
+1. First you need to create some well defined themes in xml-styles.
+```
+<!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColorAmber</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColorAmber</item>
+        <item name="colorAccent">@color/secondaryColorAmber</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.RED" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColorRed</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColorRed</item>
+        <item name="colorAccent">@color/secondaryColorRed</item>
+    </style>
+
+    <style name="AppTheme.PINK" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColorPink</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColorPink</item>
+        <item name="colorAccent">@color/secondaryColorPink</item>
+    </style>
+```
+    
+2. To change theme at runtime use following code in your base activity **onCreate()** method and just before **setContentView()**.
+    
+```
+// To change theme just put your theme id.
+int theme = getThemeFromPreferences(); // R.style.AppTheme_RED
+setTheme(theme);
+```
+  
+3. To change theme of your setting/preference activity (from where you are changing theme) you need to recreate that activity by calling following method of that activity.
+```
+//store your theme id in preference
+saveThemeInPreferences(R.style.AppTheme_RED);
+//recreate this activity to see changes
+SettingActivity.this.recreate();
 ```
