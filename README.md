@@ -1,5 +1,5 @@
-# Android-MultiTheme
-Android multiple theme implementation with day night mode.
+# Android-Multi-Theme-UI
+This example cover Android multi theme UI implementation with day night mode.
 
 ![Custom Date Picker](https://github.com/pkjvit/UI-MultiTheme/blob/master/gif_multi_theme_240x480.gif)
 
