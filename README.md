@@ -3,6 +3,16 @@ This example cover Android multi theme UI implementation with day night mode.
 
 ![Custom Date Picker](https://github.com/pkjvit/UI-MultiTheme/blob/master/gif_multi_theme_240x480.gif)
 
+## Screen Shots
+
+<div>
+<img src="https://github.com/pkjvit/Android-Multi-Theme-UI/blob/master/ScreenShots/multi_theme_01.png" width="200">
+<img width="20">
+<img src="https://github.com/pkjvit/Android-Multi-Theme-UI/blob/master/ScreenShots/multi_theme_02.png" width="200">
+<img width="20">
+<img src="https://github.com/pkjvit/Android-Multi-Theme-UI/blob/master/ScreenShots/multi_theme_03.png" width="200">
+</div>
+
 
 ## Day Night Mode
 Appcompat has come with a new theme family **Theme.AppCompat.DayNight**.
