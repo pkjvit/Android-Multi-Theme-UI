@@ -1,3 +1,5 @@
+<img src="https://github.com/pkjvit/Android-Multi-Theme-UI/blob/master/ScreenShots/flex.jpg">
+
 # Android-Multi-Theme-UI
 This example cover Android multi theme UI implementation with day night mode.
 
